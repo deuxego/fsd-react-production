@@ -1,20 +1,26 @@
-# NPM
+# Logs
+logs
+*.log
 npm-debug.log*
-node_modules/
-.npm
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# IDEs
-.vscode/
-*.code-workspace
+node_modules
+dist
+dist-ssr
+*.local
 
-# bundler
-esm/
-.cache
-
-# OSX
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# ENV
 .env
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

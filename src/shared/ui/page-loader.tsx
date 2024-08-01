@@ -1,6 +1,3 @@
-
 export const PageLoader = () => {
-  return (
-    <div>Loading...</div>
-  )
-}
+  return <div>Loading...</div>;
+};
