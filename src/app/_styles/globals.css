@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root{
-  --navbar-height: 50px;
+  --navbar-height: 60px;
 }
 
 body {

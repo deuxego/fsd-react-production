@@ -11,7 +11,7 @@ const buttonVariants = cva('flex justify-center items-center rounded-md text-sm'
       outline:
         'border border-solid border-input  hover:bg-secondary hover:text-secondary-foreground',
       ghost: 'hover:bg-accent hover:text-accent-foreground',
-      link: 'text-primary underline-offset-4 hover:underline'
+      link: 'text-md text-primary underline-offset-4 hover:underline'
     },
     size: {
       sm: 'px-3 h-9',
