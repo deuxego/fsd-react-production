@@ -4,8 +4,8 @@ import { useClickOutside } from '@/shared/hooks/use-click-outside';
 import { useDialogProvider } from '../model/use-dialog-provider';
 import { dialogContext } from '../model/dialog-context';
 import { useDialog } from '../model/use-dialog';
-import { createPortal } from 'react-dom';
 import { cn } from '@/shared/lib/utils';
+import { Portal } from '../../portal';
 import { X } from 'lucide-react';
 
 export const Dialog = (props: PropsWithChildren<{ opened?: boolean }>) => {
@@ -37,23 +37,23 @@ export const DialogContent: FC<HTMLAttributes<HTMLDivElement>> = ({
   const { opened, setOpened } = useDialog();
 
   return (
-    opened &&
-    createPortal(
-      <div
-        {...props}
-        className={cn(
-          'absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full max-h-64 max-w-lg gap-4 border bg-background p-6 shadow-lg duration-200 rounded-md sm:rounded-lg',
-          className
-        )}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <X
-          className="absolute top-4 right-4 text-muted-foreground cursor-pointer"
-          onClick={() => setOpened(false)}
-        />
-        {children}
-      </div>,
-      document.body
+    opened && (
+      <Portal>
+        <div
+          {...props}
+          className={cn(
+            'absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full max-h-64 max-w-lg gap-4 border bg-background p-6 shadow-lg duration-200 rounded-md sm:rounded-lg',
+            className
+          )}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <X
+            className="absolute top-4 right-4 text-muted-foreground cursor-pointer"
+            onClick={() => setOpened(false)}
+          />
+          {children}
+        </div>
+      </Portal>
     )
   );
 };
