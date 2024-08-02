@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start:server": "node ./json-server/server.js",
     "build": "tsc -b && vite build",
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -51,6 +52,7 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "eslint-plugin-storybook": "^0.8.0",
     "jsdom": "^24.1.1",
+    "json-server": "^0.17.4",
     "postcss": "^8.4.40",
     "prettier": "^3.3.3",
     "storybook": "^8.2.7",
