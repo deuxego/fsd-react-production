@@ -1,6 +1,6 @@
 import { sidebarContext } from '../model/sidebar-context';
+import { useSidebarProvider } from '../model/use-sidebar-provider';
 import { SidebarContent } from './sidebar-content';
-import { useSidebar } from '../model/use-sidebar';
 import { SidebarToggle } from './sidebar-toggle';
 import { ReactNode } from 'react';
 
@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const Sidebar = ({ action }: Props) => {
-  const { value } = useSidebar();
+  const { value } = useSidebarProvider();
 
   return (
     <sidebarContext.Provider value={value}>
