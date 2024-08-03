@@ -1,11 +1,12 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import { FC, HTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 import { cn } from '../../lib/utils';
 
-const buttonVariants = cva('flex justify-center items-center rounded-md text-sm', {
+const buttonVariants = cva('flex justify-center items-center rounded-md text-sm disabled:bg-muted disabled:text-muted-foreground', {
   variants: {
     variant: {
-      primary: 'bg-primary text-primary-foreground hover:opacity-80',
+      primary:
+        'bg-primary text-primary-foreground hover:opacity-80',
       secondary: 'bg-secondary text-secondary-foreground hover:opacity-80',
       destructive: 'bg-destructive text-destructive-foreground',
       outline:
@@ -26,7 +27,7 @@ const buttonVariants = cva('flex justify-center items-center rounded-md text-sm'
 });
 
 export const Button: FC<
-  HTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants>
+  ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants>
 > = ({ className, variant, size, ...props }) => {
   return <button {...props} className={cn(buttonVariants({ variant, size }), className)} />;
 };
